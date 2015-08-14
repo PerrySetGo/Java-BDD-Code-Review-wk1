@@ -7,18 +7,24 @@ public class wordPuzzTest {
   public void InputStringOutputsAString_istrue() {
     wordPuzz testWordPuzz = new wordPuzz();
     String testInput = "String";
-    String outputString = testWordPuzz.createOutput(testInput);
+    String outputString = testWordPuzz.switchLetters(testInput);
     assertEquals(true, outputString instanceof String);
   }
 
+  @Test
+  public void InputStringOutPutsAsDashIfAVowel_istrue() {
+    wordPuzz testWordPuzz = new wordPuzz();
+    String testInput = "A";
+    String outputString = testWordPuzz.switchLetters(testInput);
+    assertEquals(outputString, "-");
+  }
 
-  //maybe come back to this
-  // @Test
-  // public void InputStringOutputsAsDifferentString_istrue() {
-  //   wordPuzz testWordPuzz = new wordPuzz();
-  //   String testInput = "thisisateststringthatnoonewillenter";
-  //   String outputString = testWordPuzz.createOutput(testInput);
-  //   assertNotEquals(true, true);
-  // }
+  @Test
+  public void InputStringOutPutDoesnotChangeIfAConsonant_istrue() {
+    wordPuzz testWordPuzz = new wordPuzz();
+    String testInput = "K";
+    String outputString = testWordPuzz.switchLetters(testInput);
+    assertEquals(outputString, testInput);
+  }
 
 }

@@ -29,8 +29,6 @@ public class wordPuzz {
     }, new VelocityTemplateEngine());
   }
 
-
-
   public static String switchLetters( String userInput ){
 
     String userInputUpperCase = userInput.toUpperCase();
@@ -79,7 +77,7 @@ public class wordPuzz {
     counter++;
 
   }
-  
+
   return resetWord;
 
 

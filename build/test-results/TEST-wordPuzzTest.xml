@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="wordPuzzTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-08-14T17:29:25" hostname="epicodus-115.local" time="0.001">
+<testsuite name="wordPuzzTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-08-14T20:38:32" hostname="epicodus-115.local" time="0.002">
   <properties/>
-  <testcase name="InputStringOutputsAString_istrue" classname="wordPuzzTest" time="0.001"/>
+  <testcase name="InputStringOutputsAString_istrue" classname="wordPuzzTest" time="0.0"/>
+  <testcase name="InputStringOutPutsAsDashIfAVowel_istrue" classname="wordPuzzTest" time="0.0"/>
+  <testcase name="InputStringOutPutDoesnotChangeIfAConsonant_istrue" classname="wordPuzzTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
