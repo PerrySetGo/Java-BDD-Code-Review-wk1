@@ -35,10 +35,27 @@ public class wordPuzz {
 
     String userInputUpperCase = userInput.toUpperCase();
     System.out.println("Should be Uppercase:" + userInputUpperCase );
-    userInputUpperCase = userInputUpperCase.replaceAll("A", "-");
-    System.out.println("Should be edited:" + userInputUpperCase );
+    Integer stringLength = userInputUpperCase.length();
+    Integer counter = 0;
+
+    while (counter < stringLength){
+      switch(userInputUpperCase){
+        case "A":
+        userInputUpperCase = userInputUpperCase.replaceAll("A", "-");
+        counter++;
+        System.out.println("Should be replaced:" + userInputUpperCase );
+
+        break;
+
+      default:
+
+      userInputUpperCase = userInputUpperCase;
+      counter++;
+    }
+    }
     return userInputUpperCase;
-  }
+
+  } //close method
 
 
   // public static String createOutput( String transformer, String userInput ){
