@@ -34,28 +34,57 @@ public class wordPuzz {
   public static String switchLetters( String userInput ){
 
     String userInputUpperCase = userInput.toUpperCase();
-    System.out.println("Should be Uppercase:" + userInputUpperCase );
+    String resetWord = "";
+    String letter = "";
     Integer stringLength = userInputUpperCase.length();
     Integer counter = 0;
 
     while (counter < stringLength){
-      switch(userInputUpperCase){
-        case "A":
-        userInputUpperCase = userInputUpperCase.replaceAll("A", "-");
-        counter++;
-        System.out.println("Should be replaced:" + userInputUpperCase );
 
+      letter = Character.toString(userInputUpperCase.charAt(counter));
+
+      switch(letter){
+
+        case "A":
+        letter = letter.replaceAll("A", "-");
+        resetWord = resetWord+letter;
         break;
 
-      default:
+        case "E":
+        letter = letter.replaceAll("E", "-");
+        resetWord = resetWord+letter;
+        break;
 
-      userInputUpperCase = userInputUpperCase;
-      counter++;
-    }
-    }
-    return userInputUpperCase;
+        case "I":
+        letter = letter.replaceAll("I", "-");
+        resetWord = resetWord+letter;
+        break;
 
-  } //close method
+        case "O":
+        letter = letter.replaceAll("O", "-");
+        resetWord = resetWord+letter;
+        break;
+
+        case "U":
+        letter = letter.replaceAll("U", "-");
+        resetWord = resetWord+letter;
+        break;
+
+        default:
+        letter = letter;
+        resetWord = resetWord+letter;
+        break;
+    }
+
+    counter++;
+
+  }
+  
+  return resetWord;
+
+
+
+  //close method
 
 
   // public static String createOutput( String transformer, String userInput ){
@@ -67,6 +96,7 @@ public class wordPuzz {
   // }
 
 
+}
 
-
-}//close main class
+}
+//close main class
