@@ -15,34 +15,41 @@ public class wordPuzz {
     }, new VelocityTemplateEngine());
 
     get("/output", (request, response) -> {
-      //set up the hashmap and set the output
-      Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/output.vtl");
 
-      //run the program
+      //run the program first
       String userInput = request.queryParams("userInput");
       String outPut = switchLetters(userInput);
 
-      //output the change to the page
+      //then output the change to the page
+      Map<String, Object> model = new HashMap<String, Object>();
       model.put("outPut", outPut);
+      model.put("template", "templates/output.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
 
-  public static String switchLetters( String userInput ){
+  public static String switchLetters(String userInput){
 
-    String userInputUpperCase = userInput.toUpperCase();
     String resetWord = "";
     String letter = "";
-    Integer stringLength = userInputUpperCase.length();
+    String userInputUpperCase = "";
+    Boolean whichCase = false;
+
+    Integer stringLength = userInput.length();
     Integer counter = 0;
 
     while (counter < stringLength){
+      //go through the word letter by letter
+      letter = Character.toString(userInput.charAt(counter));
 
-      letter = Character.toString(userInputUpperCase.charAt(counter));
+      //grab the case
+      whichCase = Character.isUpperCase(letter.charAt(0));
 
+      // make it uppercase so we can get by with only one set of switches
+      letter = letter.toUpperCase();
+
+      //sub it appropriately
       switch(letter){
-
         case "A":
         letter = letter.replaceAll("A", "-");
         resetWord = resetWord+letter;
@@ -68,33 +75,21 @@ public class wordPuzz {
         resetWord = resetWord+letter;
         break;
 
-        default:
-        letter = letter;
-        resetWord = resetWord+letter;
+        default: //reset the cases correctly for consonants.
+          if (whichCase == false){
+            letter = letter.toLowerCase();
+            //print her
+          }
+          else{ //nothing here
+          }
+          resetWord = resetWord+letter; 
         break;
-    }
+        }
+        counter++;
+      }
 
-    counter++;
+      return resetWord;
 
-  }
+    }  //close method
 
-  return resetWord;
-
-
-
-  //close method
-
-
-  // public static String createOutput( String transformer, String userInput ){
-  //
-  //   if (userInput instanceof String){
-  //     outPutType = "String";
-  //   }
-  //   return outPutType;
-  // }
-
-
-}
-
-}
-//close main class
+  } //close main class

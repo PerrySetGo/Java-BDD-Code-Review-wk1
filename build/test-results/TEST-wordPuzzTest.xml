@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="wordPuzzTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-08-14T20:38:32" hostname="epicodus-115.local" time="0.002">
+<testsuite name="wordPuzzTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2015-08-14T22:52:11" hostname="epicodus-115.local" time="0.001">
   <properties/>
-  <testcase name="InputStringOutputsAString_istrue" classname="wordPuzzTest" time="0.0"/>
+  <testcase name="InputStringOutputsAString_istrue" classname="wordPuzzTest" time="0.001"/>
   <testcase name="InputStringOutPutsAsDashIfAVowel_istrue" classname="wordPuzzTest" time="0.0"/>
   <testcase name="InputStringOutPutDoesnotChangeIfAConsonant_istrue" classname="wordPuzzTest" time="0.0"/>
+  <testcase name="InputStringIsConsonantWithRightCase_istrue" classname="wordPuzzTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

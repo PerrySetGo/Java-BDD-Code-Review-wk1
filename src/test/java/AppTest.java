@@ -37,4 +37,12 @@ public class AppTest extends FluentTest {
       submit(".btn");
       assertThat(pageSource()).contains("PPP");
   }
+
+  @Test //when we enter consonants, they are returned in the case they were entered
+  public void correctCaseTest() {
+      goTo("http://localhost:4567/");
+      fill("#userInput").with("pPp");
+      submit(".btn");
+      assertThat(pageSource()).contains("pPp");
+  }
 }
