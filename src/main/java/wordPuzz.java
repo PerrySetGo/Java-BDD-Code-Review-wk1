@@ -19,24 +19,37 @@ public class wordPuzz {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/output.vtl");
 
-      //get the output from the method
+      //run the program
       String userInput = request.queryParams("userInput");
-      String outPutType = createOutput(userInput);
-
+      String outPut = switchLetters(userInput);
 
       //output the change to the page
-      model.put("outPutType", outPutType);
+      model.put("outPut", outPut);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
 
-  public static String createOutput( String userInput ){
-    String outPutType = "";
 
-    if (userInput instanceof String){
-      outPutType = "String";
-    }
-    return outPutType;
 
+  public static String switchLetters( String userInput ){
+
+    String userInputUpperCase = userInput.toUpperCase();
+    System.out.println("Should be Uppercase:" + userInputUpperCase );
+    userInputUpperCase = userInputUpperCase.replaceAll("A", "-");
+    System.out.println("Should be edited:" + userInputUpperCase );
+    return userInputUpperCase;
   }
-}
+
+
+  // public static String createOutput( String transformer, String userInput ){
+  //
+  //   if (userInput instanceof String){
+  //     outPutType = "String";
+  //   }
+  //   return outPutType;
+  // }
+
+
+
+
+}//close main class

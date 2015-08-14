@@ -5,3 +5,10 @@ An input form captures a string input from the user.
 
 An output form returns a string to the user.
 (this would require a method that captures the input and then returns a string.)
+
+The output page does not show the phrase inputted by the user without obscuring it.
+
+The inputted string is changed to replace all vowels with dashes.
+
+
+the switchletters method needs to be called from the main class and then then the switchletters class needs to return the value to the createoutput method.
