@@ -19,11 +19,24 @@ public class wordPuzz {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/output.vtl");
 
+      //get the output from the method
+      String userInput = request.queryParams("userInput");
+      String outPutType = createOutput(userInput);
+
+
       //output the change to the page
-      String outPut = "value";
-      model.put("outPut", outPut);
+      model.put("outPutType", outPutType);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
 
+  public static String createOutput( String userInput ){
+    String outPutType = "";
+
+    if (userInput instanceof String){
+      outPutType = "String";
+    }
+    return outPutType;
+
+  }
 }
