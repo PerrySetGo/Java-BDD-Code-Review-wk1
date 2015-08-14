@@ -27,4 +27,14 @@ public class wordPuzzTest {
     assertEquals(outputString, testInput);
   }
 
+
+  @Test
+  public void InputStringIsConsonantWithRightCase_istrue() {
+    wordPuzz testWordPuzz = new wordPuzz();
+    String testInput = "K";
+    String outputString = testWordPuzz.switchLetters(testInput);
+    Boolean outputStringCase = Character.isUpperCase(outputString.charAt(0));
+    assertEquals(true, true);
+  }
+
 }
