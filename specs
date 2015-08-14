@@ -1,0 +1,7 @@
+Specs:
+
+An input form captures a string input from the user.
+(if input string then the varible that contains string is string)
+
+An output form returns a string to the user.
+(this would require a method that captures the input and then returns a string.)
