@@ -3,7 +3,7 @@ apply plugin: 'application'
 
 archivesBaseName = "wordpuzz"
 version = '1.0'
-mainClassName = "wordPuzz"
+mainClassName = "WordPuzz"
 
 repositories {
  mavenCentral()

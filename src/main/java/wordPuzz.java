@@ -3,11 +3,9 @@ import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 import java.util.*;
 
-public class wordPuzz {
+public class WordPuzz {
   public static void main(String[] args){
     String layout = "templates/layout.vtl";
-
-    // set up input page
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/input.vtl");
@@ -15,8 +13,6 @@ public class wordPuzz {
     }, new VelocityTemplateEngine());
 
     get("/output", (request, response) -> {
-
-      //run the program first
       String userInput = request.queryParams("userInput");
       String outPut = switchLetters(userInput);
 
@@ -39,13 +35,8 @@ public class wordPuzz {
     Integer counter = 0;
 
     while (counter < stringLength){
-      //go through the word letter by letter
       letter = Character.toString(userInput.charAt(counter));
-
-      //grab the case
       whichCase = Character.isUpperCase(letter.charAt(0));
-
-      // make it uppercase so we can get by with only one set of switches
       letter = letter.toUpperCase();
 
       //sub it appropriately
@@ -78,11 +69,10 @@ public class wordPuzz {
         default: //reset the cases correctly for consonants.
           if (whichCase == false){
             letter = letter.toLowerCase();
-            //print her
           }
-          else{ //nothing here
+          else{
           }
-          resetWord = resetWord+letter; 
+          resetWord = resetWord+letter;
         break;
         }
         counter++;
@@ -90,6 +80,6 @@ public class wordPuzz {
 
       return resetWord;
 
-    }  //close method
+    }
 
-  } //close main class
+  }
