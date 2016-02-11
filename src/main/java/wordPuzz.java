@@ -25,61 +25,17 @@ public class WordPuzz {
   }
 
   public static String switchLetters(String userInput){
+    String userOutput = userInput;
+    int counter = 0;
 
-    String resetWord = "";
-    String letter = "";
-    String userInputUpperCase = "";
-    Boolean whichCase = false;
+    while (counter < userOutput.length()){
+      String[] vowelsArray = {"A","a", "E", "e", "I", "i", "O","o","U", "u"};//catch all cases
 
-    Integer stringLength = userInput.length();
-    Integer counter = 0;
-
-    while (counter < stringLength){
-      letter = Character.toString(userInput.charAt(counter));
-      whichCase = Character.isUpperCase(letter.charAt(0));
-      letter = letter.toUpperCase();
-
-      //sub it appropriately
-      switch(letter){
-        case "A":
-        letter = letter.replaceAll("A", "-");
-        resetWord = resetWord+letter;
-        break;
-
-        case "E":
-        letter = letter.replaceAll("E", "-");
-        resetWord = resetWord+letter;
-        break;
-
-        case "I":
-        letter = letter.replaceAll("I", "-");
-        resetWord = resetWord+letter;
-        break;
-
-        case "O":
-        letter = letter.replaceAll("O", "-");
-        resetWord = resetWord+letter;
-        break;
-
-        case "U":
-        letter = letter.replaceAll("U", "-");
-        resetWord = resetWord+letter;
-        break;
-
-        default: //reset the cases correctly for consonants.
-          if (whichCase == false){
-            letter = letter.toLowerCase();
-          }
-          else{
-          }
-          resetWord = resetWord+letter;
-        break;
-        }
-        counter++;
+      for (String vowel : vowelsArray){
+        userOutput = userOutput.replaceAll(vowel, "-");
       }
-
-      return resetWord;
-
+      counter++;
     }
-
+  return userOutput;
   }
+}
