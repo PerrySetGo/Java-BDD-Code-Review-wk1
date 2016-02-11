@@ -16,7 +16,6 @@ public class WordPuzz {
       String userInput = request.queryParams("userInput");
       String outPut = switchLetters(userInput);
 
-      //then output the change to the page
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("outPut", outPut);
       model.put("template", "templates/output.vtl");
